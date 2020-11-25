@@ -5,13 +5,7 @@ class Box extends BaseClass {
     this.Visiblity = 255;
   }
 
-  score(){
-    var score;
-    if(this.Visiblity<0 && this. Visiblity >-150)
-    {
-      score++;
-    }
-  }
+  
 
 
   display(){
@@ -28,5 +22,12 @@ class Box extends BaseClass {
     }
     }
 
+    score(){
+     // var score;
+      if(this.Visiblity<0 && this. Visiblity >-150)
+      {
+        score++;
+      }
+    }
    
 };

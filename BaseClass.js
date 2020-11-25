@@ -13,8 +13,8 @@ class BaseClass{
       }
 
       score(){
-        var score;
-        if(this.Visiblity<0 && this. Visiblity >=150)
+        //var score;
+        if(this.Visiblity<0 && this. Visiblity >-150)
         {
           score++;
         }

@@ -22,6 +22,7 @@ var backgroundColor;
 function preload()
 {
 	ballImage=loadImage("ball.png");
+	getBackgroundImg();
 }
 
 
@@ -88,7 +89,7 @@ function setup() {
 function draw() {
  if(backgroundColor===1)
  {
-	 background("white");
+	 background("red");
  }
  else{
 	 background("gray");
@@ -173,9 +174,12 @@ function draw() {
 
 	imageMode(CENTER)
 	image(ballImage,polygon.position.x,polygon.position.y,40,40);
+	
+	text( "SCORE : " +score, 750,40);
+	
 	slingshot.display();
 
-	text( "SCORE : " +score, 750,40);
+
 
 	//keyPressed();
 
@@ -202,20 +206,18 @@ function keyPressed()
 }
 
 async function getBackgroundImg(){
-    var response = await  fetch("http://http://worldtimeapi.org/api/timezone/America/Chicago");
+    var response = await  fetch("http://worldclockapi.com/api/json/est/nowhttp://http://worldtimeapi.org/api/timezone/Asia/Tokyo");
     var responseJSON = await response.json();
 
     var datetime = responseJSON.datetime;
     var hour = datetime.slice(11,13);
 
-    if(hour >= 06 && hour <= 16){
-		backgroundColor=2;
+    if(hour >= 06 && hour <= 19){
+		backgroundColor= 0;
     }
-    else{
-	backgroundColor=1;
+	else
+	{
+		backgroundColor=1;;
 	}
-	
-	//background(backgroundColor);
-
-
+	console.log(backgroundColor);
 }
