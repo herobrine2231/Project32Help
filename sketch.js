@@ -18,6 +18,7 @@ var sbox1, sbox2, sbox3, sbox4, sbox5, sbox6, sbox7, sbox8, sbox9;
 
 var score =0;
 var backgroundColor;
+var backGroundImg;
 
 function preload()
 {
@@ -87,15 +88,9 @@ function setup() {
 }
 
 function draw() {
- if(backgroundColor===1)
- {
-	 background("red");
- }
- else{
-	 background("gray");
- }
+ if(backGroundImg)
+	 background(backGroundImg);
 
- 
 	ground.display();
 	stand.display();
 	stand2.display();
@@ -206,18 +201,18 @@ function keyPressed()
 }
 
 async function getBackgroundImg(){
-    var response = await  fetch("http://worldclockapi.com/api/json/est/nowhttp://http://worldtimeapi.org/api/timezone/Asia/Tokyo");
+    var response = await  fetch("http://worldtimeapi.org/api/timezone/Asia/Tokyo");
     var responseJSON = await response.json();
 
     var datetime = responseJSON.datetime;
     var hour = datetime.slice(11,13);
 
     if(hour >= 06 && hour <= 19){
-		backgroundColor= 0;
+		backgroundColor = "lightBgImg.png";
     }
 	else
 	{
-		backgroundColor=1;;
+		backgroundColor="DarkBGImg.png";
 	}
-	console.log(backgroundColor);
+	backGroundImg=loadImage(backgroundColor);
 }
