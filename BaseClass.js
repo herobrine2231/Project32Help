@@ -12,13 +12,13 @@ class BaseClass{
         World.add(world, this.body);
       }
 
-      score(){
+     /* score(){
         //var score;
         if(this.Visiblity<0 && this. Visiblity >-150)
         {
           score++;
         }
-      }
+      }*/
 
 
       display(){

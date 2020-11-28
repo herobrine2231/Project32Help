@@ -164,19 +164,17 @@ function draw() {
 	sbox8.score();
 
 
-
-
-
 	imageMode(CENTER)
 	image(ballImage,polygon.position.x,polygon.position.y,40,40);
 	
-	text( "SCORE : " +score, 750,40);
+
 	
 	slingshot.display();
+	keyPressed();
+	
+	text( "SCORE : " +score,750,40);
 
 
-
-	//keyPressed();
 
 
 }
